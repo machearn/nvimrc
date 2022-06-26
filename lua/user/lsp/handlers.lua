@@ -23,7 +23,8 @@ M.setup = function()
   end
 
   local config = {
-    virtual_text = false, -- disable virtual text
+    -- enable virtual text. virtual_text helps display the information of linters
+    virtual_text = true,
     signs = {
       active = signs, -- show signs
     },
