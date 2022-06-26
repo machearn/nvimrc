@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim" }
   use { "goolord/alpha-nvim" }
   use { "tpope/vim-surround" }
+  use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
