@@ -58,6 +58,17 @@ return packer.startup(function(use)
   use { "goolord/alpha-nvim" }
   use { "tpope/vim-surround" }
   use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+          local saga = require("lspsaga")
+
+          saga.init_lsp_saga({
+              -- your configuration
+          })
+      end,
+  })
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
