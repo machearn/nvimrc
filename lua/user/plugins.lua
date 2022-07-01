@@ -69,6 +69,7 @@ return packer.startup(function(use)
           })
       end,
   })
+  use { "tpope/vim-fugitive" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
