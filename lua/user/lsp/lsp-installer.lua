@@ -14,7 +14,8 @@ local servers = {
   "yamlls",
   "cmake",
   "rust_analyzer",
-  "clangd"
+  "clangd",
+  "gopls"
 }
 
 lsp_installer.setup()
