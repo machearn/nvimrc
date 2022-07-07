@@ -1,42 +1,34 @@
-# A Basic Stable IDE config for Neovim
+# A Basic Stable IDE config for Neovim Based on `Christian Chiarulli`'s Template
 
-> Why does this repo exist?
-
-This config attempts to provide a rock solid fully featured starting point for someone new to Neovim, or just tired of maintaining the basic IDE components of their config. 
-
-> What makes it "rock solid"?
-
-All of the included plugins are pinned to a version that ensures they are compatible and will not update potentially introducing errors into your config. For every Neovim release I will update this repo along with the community to keep it up to date with the newest versions.
-
-As I mentioned, this config is meant as a starting point for people new to Neovim who want a familiar IDE experience. The config has a very simple structure that makes it easy to add new plugins. 
+> https://github.com/LunarVim/nvim-basic-ide.git
 
 ## Install Neovim 0.7
 
-You can install Neovim with your package manager e.g. brew, apt, pacman etc.. but remember that when you update your packages Neovim may be upgraded to a newer version.
+  - MacOS
 
-If you would like to make sure Neovim only updates when you want it to than I recommend installing from source:
+  ```sh
+  brew install neovim
+  ```
 
-```sh
-git clone https://github.com/neovim/neovim.git
-cd neovim
-git checkout release-0.7
-make CMAKE_BUILD_TYPE=Release
-sudo make install
-```
+  - Ubuntu
+
+  ```sh
+  apt install neovim
+  ```
 
 ## Install the config
 
 Make sure to remove or move your current `nvim` directory
 
 ```sh
-git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
+git clone https://github.com/machearn/nvimrc ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed 
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 
-**NOTE** Checkout this file for some predefined keymaps: [keymaps](https://github.com/LunarVim/nvim-basic-ide/blob/master/lua/user/keymaps.lua)
+**NOTE** Checkout this file for some predefined keymaps: [keymaps](https://github.com/machearn/nvimrc/blob/master/lua/user/keymaps.lua)
 
 ## Get healthy
 
@@ -84,7 +76,7 @@ We will also need `ripgrep` for Telescope to work:
   ```
 ---
 
-**NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
+**NOTE** make sure you have [node](https://nodejs.org/en/) installed
 
 ## Fonts
 
@@ -106,17 +98,17 @@ First Enter:
 
 and press `i` on the Language Server you wish to install
 
-Next you will need to add the server to this list: [servers](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/lsp-installer.lua#L6)
+Next you will need to add the server to this list: [servers](https://github.com/machearn/nvimrc/blob/fbf63c1ba5debf5259ac94ee10a97d3c5a473992/lua/user/lsp/lsp-installer.lua#L17)
 
 ### Formatters and linters
 
-Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/null-ls.lua#L13)
+Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/machearn/nvimrc/blob/fbf63c1ba5debf5259ac94ee10a97d3c5a473992/lua/user/lsp/null-ls.lua#L25)
 
 **NOTE** Some are already setup as examples, remove them if you want
 
 ### Plugins
 
-You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/plugins.lua#L42)
+You can install new plugins here: [plugins](https://github.com/machearn/nvimrc/blob/fbf63c1ba5debf5259ac94ee10a97d3c5a473992/lua/user/plugins.lua#L72)
 
 ---
 
@@ -157,6 +149,10 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
+- [vim-surround](https://github.com/tpope/vim-surround)
+- [trouble.nvim](https://github.com/folke/trouble.nvim)
+- [lspsaga.nvim](https://github.com/glephir/lspsaga.nvim)
+- [fugitive](https://github.com/tpope/vim-fugitive)
 
 ---
 
