@@ -1,6 +1,6 @@
-# A Basic Stable IDE config for Neovim Based on `Christian Chiarulli`'s Template
+# A Basic Stable IDE config for Neovim 
 
-> https://github.com/LunarVim/nvim-basic-ide.git
+> Based on [Christian Chiarulli's Template](https://github.com/LunarVim/nvim-basic-ide.git)
 
 ## Install Neovim 0.7
 
