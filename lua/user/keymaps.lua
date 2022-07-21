@@ -43,6 +43,9 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
+-- Fold
+keymap("n", "<leader>zz", "zfa}", opts)
+
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
