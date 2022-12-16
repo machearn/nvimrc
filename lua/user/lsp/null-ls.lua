@@ -23,5 +23,6 @@ null_ls.setup {
     diagnostics.flake8,
     diagnostics.pylint,
     diagnostics.mypy,
+    diagnostics.gitlint,
   },
 }
