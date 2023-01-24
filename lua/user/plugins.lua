@@ -81,6 +81,22 @@ return packer.startup(function(use)
       }
     end
   }
+  use {
+    "ggandor/leap.nvim",
+    config = function()
+      require("leap").add_default_mappings()
+    end
+  }
+  use {
+    "ggandor/flit.nvim",
+    config = function()
+      require("flit").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
