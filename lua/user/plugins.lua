@@ -58,17 +58,17 @@ return packer.startup(function(use)
   use { "goolord/alpha-nvim" }
   use { "tpope/vim-surround" }
   use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
-  use({
+  use {
       "glepnir/lspsaga.nvim",
       branch = "main",
       config = function()
-          local saga = require("lspsaga")
-
-          saga.init_lsp_saga({
-              -- your configuration
-          })
+        require('lspsaga').setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
       end,
-  })
+  }
   use { "tpope/vim-fugitive" }
   use { "github/copilot.vim" }
   use {
