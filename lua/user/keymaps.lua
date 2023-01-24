@@ -30,8 +30,11 @@ vim.g.mapleader = " "
 
 keymap("n", "<C-k>", ":resize -2<CR>", opts)
 keymap("n", "<C-j>", ":resize +2<CR>", opts)
-keymap("n", "<C-h>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-l>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-h>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-l>", ":vertical resize -2<CR>", opts)
+
+-- Reload config
+keymap("n", "<leader>rc", ":luafile $MYVIMRC<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
