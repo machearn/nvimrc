@@ -76,6 +76,12 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "<leader>lr", "<cmd>Lspsaga rename<CR>", opts)
   keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  keymap(bufnr, "n", "<leader>ld", "<cmd>Lspsaga peek_definition<CR>", opts)
+  keymap(bufnr, "n", "<leader>l!l", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+  keymap(bufnr, "n", "<leader>l!c", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+  keymap(bufnr, "n", "<leader>l!b", "<cmd>Lspsaga show_buf_diagnostics<CR>", opts)
+  keymap(bufnr, "n", "<leader>l!p", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+  keymap(bufnr, "n", "<leader>l!n", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
