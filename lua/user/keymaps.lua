@@ -3,6 +3,9 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
+-- Shorten WhichKey function
+local wk = require("which-key")
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -33,21 +36,12 @@ keymap("n", "<C-j>", ":resize +2<CR>", opts)
 keymap("n", "<C-h>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-l>", ":vertical resize -2<CR>", opts)
 
--- Reload config
-keymap("n", "<leader>rc", ":luafile $MYVIMRC<CR>", opts)
-
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
--- Fold
-keymap("n", "<leader>zz", "zfa}", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -61,31 +55,63 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Plugins --
+-- Which Key --
+wk.register({
+  ["<leader>"] = {
+    -- Pick buffer
+    b = {
+      name = "buffer",
+      b = { "<cmd>BufferLinePick<CR>", "pick buffer" },
+      d = { "<cmd>BufferLinePickClose<CR>", "delete buffer" },
+    },
+    -- Telescope
+    t = {
+      name = "telescope",
+      f = { "<cmd>Telescope find_files<CR>", "find files" },
+      t = { "<cmd>Telescope live_grep<CR>", "find text" },
+      p = { "<cmd>Telescope projects<CR>", "find projects" },
+      b = { "<cmd>Telescope buffers<CR>", "find buffers" },
+    },
+    -- File
+    f = {
+      name = "file",
+      f = { "<cmd>Telescope find_files<CR>", "find files" },
+      s = { "<cmd>w<CR>", "save file" },
+      r = { "<cmd>luafile $MYVIMRC<CR>", "reload config" },
+    },
+    -- NvimTree
+    e = { "<cmd>NvimTreeToggle<CR>", "toggle file explorer" },
+    -- Git
+    g = {
+      name = "git",
+      g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "toggle lazygit" },
+    },
+    -- DAP
+    d = {
+      name = "debug",
+      b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "toggle breakpoint" },
+      c = { "<cmd>lua require'dap'.continue()<cr>", "continue" },
+      i = { "<cmd>lua require'dap'.step_into()<cr>", "step into" },
+      o = { "<cmd>lua require'dap'.step_over()<cr>", "step over" },
+      O = { "<cmd>lua require'dap'.step_out()<cr>", "step out" },
+      r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "toggle repl" },
+      l = { "<cmd>lua require'dap'.run_last()<cr>", "run last" },
+      u = { "<cmd>lua require'dapui'.toggle()<cr>", "toggle ui" },
+      t = { "<cmd>lua require'dap'.terminate()<cr>", "terminate" },
+    },
 
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
--- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+    -- Fold
+    z = {
+      name = "fold",
+      z = { "zfa}", "fold all" },
+      o = { "zO", "open all" },
+      c = { "zC", "close all" },
+    },
+    -- Clear highlights
+    h = { "<cmd>nohlsearch<CR>", "clear highlights" },
+  },
+})
 
 -- Comment
 keymap("n", "<leader>/", '<Plug>(comment_toggle_linewise_current)', opts)
 keymap("x", "<leader>/", '<Plug>(comment_toggle_linewise_visual)')
-
--- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
-keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
