@@ -15,6 +15,7 @@ local servers = {
   "cmake",
   "rust_analyzer",
   "clangd",
+  "jdtls",
   "gopls"
 }
 
