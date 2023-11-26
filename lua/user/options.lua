@@ -46,3 +46,4 @@ vim.g.copilot_tab_fallback = ""
 vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.o.guifont = "UbuntuMono Nerd Font Mono:h20"
