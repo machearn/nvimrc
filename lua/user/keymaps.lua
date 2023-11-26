@@ -55,6 +55,9 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Flash --
+keymap({ "n", "x", "o" }, "s", "<cmd>lua require('flash').jump()<CR>", opts);
+
 -- Which Key --
 wk.register({
   ["<leader>"] = {

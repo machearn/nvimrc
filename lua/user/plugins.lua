@@ -157,6 +157,8 @@ return packer.startup(function(use)
       }
     end
   }
+  use { "folke/flash.nvim" }
+
   -- Nvim-Tree
   use {
     "nvim-tree/nvim-tree.lua",
