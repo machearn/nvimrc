@@ -65,7 +65,7 @@ wk.register({
       d = { "<cmd>BufferLinePickClose<CR>", "delete buffer" },
     },
     -- Telescope
-    t = {
+    s = {
       name = "telescope",
       f = { "<cmd>Telescope find_files<CR>", "find files" },
       t = { "<cmd>Telescope live_grep<CR>", "find text" },
@@ -80,7 +80,11 @@ wk.register({
       r = { "<cmd>luafile $MYVIMRC<CR>", "reload config" },
     },
     -- NvimTree
-    e = { "<cmd>NvimTreeToggle<CR>", "toggle file explorer" },
+    t = {
+      name = "nvim tree",
+      t = { "<cmd>NvimTreeFocus<CR>", "toggle file explorer" },
+      x = { "<cmd>NvimTreeClose<CR>", "close file explorer" },
+    },
     -- Git
     g = {
       name = "git",
