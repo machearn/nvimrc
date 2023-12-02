@@ -55,7 +55,23 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim" }
   use { "goolord/alpha-nvim" }
   use { "tpope/vim-surround" }
-  use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" }
+  use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- keywords recognized as todo comments
+        keywords = {
+          TODO = { icon = " ", color = "info" },
+          WARN = { icon = " ", color = "warning", alt = { } },
+          PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+          NOTE = { icon = " ", color = "hint", alt = { } },
+          TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        },
+      }
+    end,
+  }
   use {
       "glepnir/lspsaga.nvim",
       branch = "main",
@@ -90,6 +106,7 @@ return packer.startup(function(use)
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
   use { "lunarvim/darkplus.nvim" }
+  use { "sainnhe/sonokai" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" } -- The completion plugin
