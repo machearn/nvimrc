@@ -128,4 +128,11 @@ nvim_tree.setup {
     width = 30,
     side = "left",
   },
+  filters = {
+    custom = {
+      "^.git$", -- hide git Dotfiles
+      "^.DS_Store$", -- hide .DS_Store
+      "^.env$", -- hide .env
+    }
+  }
 }
