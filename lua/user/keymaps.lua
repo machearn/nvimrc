@@ -65,15 +65,18 @@ wk.register({
     b = {
       name = "buffer",
       b = { "<cmd>BufferLinePick<CR>", "pick buffer" },
-      d = { "<cmd>BufferLinePickClose<CR>", "delete buffer" },
+      d = { "<cmd>Bdelete<CR>", "delete buffer" },
+      c = { "<cmd>BufferLinePickClose<CR>", "close buffer" },
+      s = { "<cmd>Telescope buffers<CR>", "switch buffer" },
     },
     -- Telescope
     s = {
       name = "telescope",
       f = { "<cmd>Telescope find_files<CR>", "find files" },
-      t = { "<cmd>Telescope live_grep<CR>", "find text" },
+      t = { "<cmd>Telescope live_grep<CR>", "search current project" },
       p = { "<cmd>Telescope projects<CR>", "find projects" },
-      b = { "<cmd>Telescope buffers<CR>", "find buffers" },
+      b = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "search current buffer" },
+      B = { "<cmd>lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>", "search opened buffers" },
     },
     -- File
     f = {
