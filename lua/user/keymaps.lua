@@ -81,6 +81,7 @@ wk.register({
       f = { "<cmd>Telescope find_files<CR>", "find files" },
       s = { "<cmd>w<CR>", "save file" },
       r = { "<cmd>luafile $MYVIMRC<CR>", "reload config" },
+      e = { "<cmd>lua _RANGER_TOGGLE()<CR>", "toggle ranger" },
     },
     -- NvimTree
     t = {
